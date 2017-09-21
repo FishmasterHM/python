@@ -1,0 +1,28 @@
+# -*- coding:utf-8 -*-
+from PIL import Image
+from PIL import ImageDraw as ID
+from PIL import ImageFont as IF
+
+im = Image.open("fig/EricCartman.jpg")
+print "format: " + im.format
+print "size: ", im.size
+print "mode: ", im.mode
+drawim = ID.Draw(im)
+
+# (左上到右下,横坐标,纵坐标)
+box = (50, 50, 427, 371)
+region = im.crop(box)                 # 剪切
+# Image.transpose(method) 
+# Image.FLIP_LEFT_RIGHT, Image.ROTATE_180
+# http://www.cnblogs.com/wei-li/archive/2012/04/19/2456725.html
+#region = region.transpose(Image.FLIP_TOP_BOTTOM)
+#im.paste(region,box)
+
+xsize, ysize = im.size
+fontsize = min(xsize, ysize)//11
+
+myFont = IF.truetype("fig/ht.ttf", fontsize)
+
+drawim.text([0.9*xsize, 0.1*ysize - fontsize],
+            "3", fill = (255, 0, 0), font = myFont)
+im.save("fig/afternum.jpg")
