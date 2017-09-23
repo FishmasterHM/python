@@ -15,7 +15,7 @@ xsize, ysize = im.size
 fontsize = 80                               # determine the size of font
 #https://stackoverflow.com/questions/4902198/pil-how-to-scale-text-size-in-relation-to-the-size-of-the-image
 # 关于fontsize 和图片大小的关系
-myFont = IF.truetype("fig/FreeMono.ttf",   # 字体
+myFont = IF.truetype("FreeMono.ttf",   # 字体
                      fontsize)
 
 drawim.text([0, 0.], "5",
