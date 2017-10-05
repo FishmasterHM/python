@@ -1,3 +1,7 @@
 map()
 iter()
 zip()
+
+
+numpy:
+conconcatenate(), append()
