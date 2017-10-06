@@ -1,6 +1,6 @@
 # what if subproblem is unsolvable?
 knownresults = {}
-coinList = [1,2,5]
+coinList = [1,3,5]
 for coin in coinList:
     knownresults[coin] = 1
 
